@@ -1,0 +1,21 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+
+<div class="jumbotron">
+  <h1 class="display-4 center">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+  	{% if session.logged_in %}
+	    <a class="btn btn-primary btn-lg" href="/albums" role="button">Album</a>
+	    <a class="btn btn-primary btn-lg" href="/logout" role="button">logout</a>
+	{% else %}
+	    <a class="btn btn-primary btn-lg" href="/signup" role="button">sign up</a>
+	    <a class="btn btn-primary btn-lg" href="/login" role="button">login</a>
+	{% endif %}
+  </p>
+</div>
+
+{% endblock %}

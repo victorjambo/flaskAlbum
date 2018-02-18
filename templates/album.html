@@ -1,0 +1,24 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+
+<div class="card mb-4 box-shadow">
+  <div class="card-header">
+    {{ album.title }}
+  </div>
+  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">{{ album.author }}</h6>
+    <p class="card-text">{{ album.body }}</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <a href="/album-{{ album.id }}/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+        <a href="/album-{{ album.id }}/destroy" class="btn btn-sm btn-outline-secondary">Delete</a>
+        <a href="/albums" class="btn btn-sm btn-outline-secondary">Back</a>
+      </div>
+      <small class="text-muted">{{ album.time }}</small>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
